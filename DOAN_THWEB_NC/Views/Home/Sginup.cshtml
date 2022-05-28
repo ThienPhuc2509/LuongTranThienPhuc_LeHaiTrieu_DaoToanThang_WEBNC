@@ -1,0 +1,77 @@
+﻿@model DOAN_THWEB_NC.Models.User
+@{
+    ViewBag.Title = "Sginup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4></div>
+            <div class="col-lg-4>
+                @using (Html.BeginForm("Sginup", "Home", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken();
+                    <h2 style="text-align:center">SginUp/Register</h2>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-6">
+                            @Html.LabelFor(m => m.FirstName)
+                        </div>
+                        <div class="col-lg-6">
+                            @Html.TextBoxFor(m => m.FirstName)
+                            @Html.ValidationMessageFor(m => m.FirstName)
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-6">
+                            @Html.LabelFor(m => m.LastName)
+                        </div>
+                        <div class="col-lg-6">
+                            @Html.TextBoxFor(m => m.LastName)
+                            @Html.ValidationMessageFor(m => m.LastName)
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-6">
+                            @Html.LabelFor(m => m.Email)
+                        </div>
+                        <div class="col-lg-6">
+                            @Html.TextBoxFor(m => m.Email)
+                            @Html.ValidationMessageFor(m => m.Email)
+                            @if (ViewBag.error != null)
+                            {
+                                @ViewBag.error
+                            }
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-6">
+                            @Html.LabelFor(m => m.Password)
+                        </div>
+                        <div class="col-lg-6">
+                            @Html.PasswordFor(m => m.Password)
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-lg-6">
+                            @Html.LabelFor(m => m.ConfirmPassword)
+                        </div>
+                        <div class="col-lg-6">
+                            @Html.PasswordFor(m => m.ConfirmPassword)
+                            @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                        </div>
+                    </div>
+                    <hr />
+                    <input type="submit" value="Sginup" style="display:block;margin-left:auto;margin-right:auto"/>
+                }
+            </div>
+        </div>
+    </div>
+</body>

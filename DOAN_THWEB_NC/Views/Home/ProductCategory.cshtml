@@ -1,0 +1,28 @@
+﻿@model IEnumerable<DOAN_THWEB_NC.Models.Product>
+@{
+    ViewBag.Title = "ProductCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ProductCategory</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-top:20px">
+            <div class="card">
+                <a href="@Url.Action("Index", "ProductDetail", new {Id=item.IDProduct})"><img src="@Url.Content(item.Images)" alt="" style="height:200px; width:200px;" /></a>
+                <p style="text-align:center">@Html.DisplayFor(model => item.NameProduct) </p>
+                <div class="price-details">
+                    <div class="price-number">
+                        <p><span style="font-family: 'ambleregular';">@Html.DisplayFor(model => item.UnitPrice)</span></p>
+                    </div>
+                    <div class="add-cart">
+                        <h4><a href="/ShoppingCart/AddCart/@item.IDProduct">Add to Cart</a></h4>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
