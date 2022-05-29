@@ -2,10 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="~/Contents/style.css" rel="stylesheet" />
-    <link href="~/Contents/global.css" rel="stylesheet" />
-    <link href="~/Contents/easy-responsive-tabs.css" rel="stylesheet" />
-    <link href="~/Contents/slider.css" rel="stylesheet" />
+
     <script src="~/js/easing.js"></script>
     <script src="~/js/easyResponsiveTabs.js"></script>
     <script src="~/js/jquery-1.7.2.min.js"></script>
@@ -15,163 +12,230 @@
     <script src="~/js/script.js"></script>
     <script src="~/js/slides.min.jquery.js"></script>
     <script src="~/js/startstop-slider.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
- 
+    <link href="~/Public/css/style.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Contents/Style.css">
     <link href="~/Contents/all.min.css" rel="stylesheet" />
     <script src="~/js/all.min.js"></script>
 </head>
 <body>
     @* Header *@
-    <section class="header">
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/Home/Index">Trang Chủ</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Sản Phẩm</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Loại sản phẩm <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            @{Html.RenderAction("Index", "Menu");}
-                        </ul>
+    <section class="header bg-dark" >
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="logo_header">
+                        <img src="~/Public/img/logo.png" style="width:250px; height:150px;" />
+                       
+                    </div>
 
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li style="margin-right:20px;margin-top:10px">
+                </div>
+                <div class="col-6">
+                    <div class="search py-5">
                         @using (Html.BeginForm())
                         {
-                            <div class="form-group form-inline">
-                                @Html.TextBox("SearchString", "", new { @class = "form-control" })
-                                <input type="submit" class="btn btn-default" value="Search" />
+                            <div class="form-group form-inlinen d-flex ">
+                                @Html.TextBox("SearchString", "", new { @class = "form-control shadow-none" })
+                                <input type="submit" class="btn btn-warning shadow-none" value="Search" />
                             </div>
 
                         }
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-cart-shopping" style="color: white; width: 30px; height: 30px;padding-top:10px"></i>
-                        @Html.Action("BagCart", "ShoppingCart")
-                    </li>
-                    @if (Session["IDUser"] == null)
-                    {
-                        <li><a href="/Home/Sginup"><span class="glyphicon glyphicon-user"></span> Đăng nhập</a></li>
-                        <li><a href="/Home/Login"><span class="glyphicon glyphicon-log-in"></span> Đăng kí</a></li>
-                    }
-                    else
-                    {
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>@Session["Email"].ToString()</a></li>
-                        <li><a href="@Url.Action("Logout","Home")"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-                    }
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="search py-5 d-flex justify-content-center">
+                        <div class="cart">
+                            <i class="fa-solid fa-cart-shopping" style="color: white; width: 50px; height: 30px;"></i>
+                            @Html.Action("BagCart", "ShoppingCart")
+                            <p class="m-0 text-white">Giỏ hàng</p>
+                        </div>
+                       
 
-                </ul>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+        
+    </section>
+    
+    <section class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-5 me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/Home/Index">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Loại sản phẩm
+                            </a>
+                            <ul class="dropdown-menu">
+                                @{Html.RenderAction("Index", "Menu");}
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <ul class="navbar-nav me-5 mb-2 mb-lg-0 d-flex">
+                       
+                        <li class="nav-item">
+                          
+                        </li>
+                        @if (Session["IDUser"] == null)
+                        {
+                            <li class="nav-item me-4"><a class="nav-link"  href="/Home/Sginup"> Đăng kí</a></li>
+                            <li class="nav-item"><a class="nav-link"  href="/Home/Login"> Đăng nhập</a></li>
+                        }
+                        else
+                        {
+                            <li class="nav-item"><a class="nav-link"  href="#">@Session["Email"].ToString()</a></li>
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Logout","Home")">Đăng xuất</a></li>
+                        }
+
+                    </ul>
+
+                </div>
             </div>
         </nav>
     </section>
-    
 
     <section class="main_container">
-        @RenderBody()
+        <div class="container">
+            @RenderBody()
+
+        </div>
     </section>
 
     <section class="footer">
-        <footer class="bg-dark text-center text-lg-start text-white">
-            <!-- Grid container -->
-            <div class="container p-4">
-                <!--Grid row-->
-                <div class="row mt-4">
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">See other books</h5>
 
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                                <a href="#!" class="text-white"><i class="fas fa-book fa-fw fa-sm me-2"></i>Bestsellers</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white"><i class="fas fa-book fa-fw fa-sm me-2"></i>All books</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white"><i class="fas fa-user-edit fa-fw fa-sm me-2"></i>Our authors</a>
-                            </li>
-                        </ul>
+            <!-- Footer -->
+            <footer class="text-center text-lg-start text-white"
+                    style="background-color: #1c2331">
+                <!-- Section: Social media -->
+                <section class="d-flex justify-content-between p-4 bg-warning">
+                    <!-- Left -->
+                    <div class="me-5">
+                        <span>Kết nối cùng chúng tôi trên các nền tảng mạng xã hội: </span>
                     </div>
-                    <!--Grid column-->
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Execution of the contract</h5>
-
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#!" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Supply</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white"><i class="fas fa-backspace fa-fw fa-sm me-2"></i>Returns</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Regulations</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Privacy policy</a>
-                            </li>
-                        </ul>
+                    <!-- Left -->
+                    <!-- Right -->
+                    <div>
+                        <a href="" class="text-white me-4">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="" class="text-white me-4">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="" class="text-white me-4">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="" class="text-white me-4">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="" class="text-white me-4">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="" class="text-white me-4">
+                            <i class="fab fa-github"></i>
+                        </a>
                     </div>
-                    <!--Grid column-->
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Publishing house</h5>
-
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#!" class="text-white">The BookStore</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">123 Street</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">05765 NY</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white"><i class="fas fa-briefcase fa-fw fa-sm me-2"></i>Send us a book</a>
-                            </li>
-                        </ul>
+                    <!-- Right -->
+                </section>
+                <!-- Section: Social media -->
+                <!-- Section: Links  -->
+                <section class="">
+                    <div class="container text-center text-md-start mt-5">
+                        <!-- Grid row -->
+                        <div class="row mt-3">
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                                <!-- Content -->
+                                <h6 class="text-uppercase fw-bold">Nhóm 2</h6>
+                                <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                    style="width: 60px; background-color: #7c4dff; height: 2px" />
+                                <ul>
+                                    <li>Lương Trần Thiên Phúc</li>
+                                    <li>Lê Hải Triều</li>
+                                    <li>Đào Toàn Thắng</li>
+                                </ul>
+                            </div>
+                            <!-- Grid column -->
+                            <!-- Grid column -->
+                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold">Sản phẩm</h6>
+                                <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                    style="width: 60px; background-color: #7c4dff; height: 2px" />
+                                <p>
+                                    <a href="#!" class="text-white text-decoration-none">Điện thoại</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-white text-decoration-none">Laptop</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-white text-decoration-none">Tablet</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-white text-decoration-none">Phụ kiện</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold">Hỗ trợ</h6>
+                                <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                    style="width: 60px; background-color: #7c4dff; height: 2px" />
+                                <p>
+                                    <a href="#!" class="text-white text-decoration-none">Lịch sử mua hàng</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-white text-decoration-none">Tìm cửa hàng gần nhất</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-white text-decoration-none">Mua hàng từ xa</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-white text-decoration-none">Gứi góp ý - khiếu nại</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+                            <!-- Grid column -->
+                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold">Liên hệ</h6>
+                                <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                    style="width: 60px; background-color: #7c4dff; height: 2px" />
+                                <p><i class="fas fa-home mr-3"></i> HUFLIT University</p>
+                                <p><i class="fas fa-envelope mr-3"></i> thienphuc.luongtran@gmail.com</p>
+                                <p><i class="fas fa-phone mr-3"></i> + 078 346 7852</p>
+                                <p><i class="fas fa-print mr-3"></i> + 058 257 5704</p>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
                     </div>
-                    <!--Grid column-->
-                    <!--Grid column-->
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Write to us</h5>
-
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#!" class="text-white"><i class="fas fa-at fa-fw fa-sm me-2"></i>Help in purchasing</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Check the order status</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white"><i class="fas fa-envelope fa-fw fa-sm me-2"></i>Join the newsletter</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--Grid column-->
+                </section>
+                
+                <div class="text-center p-3"
+                     style="background-color: rgba(0, 0, 0, 0.2)">
+                    <p>&copy; Lương Trần Thiên Phúc - Lê Hải Triều - Đào Toàn Thắng</p>
                 </div>
-                <!--Grid row-->
-            </div>
-            <!-- Grid container -->
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-                © 2021 Copyright:
-                <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-            </div>
-            <!-- Copyright -->
-        </footer>
-            <div class="copy_right">
-                <p>&copy; Lương Trần Thiên Phúc - Lê Hải Triều - Đào Toàn Thắng</a></p>
-            </div>
-        </section>
+
+            </footer>
+         
+      
+
+    </section>
         <script type="text/javascript">
             $(document).ready(function () {
                 $().UItoTop({ easingType: 'easeOutQuart' });

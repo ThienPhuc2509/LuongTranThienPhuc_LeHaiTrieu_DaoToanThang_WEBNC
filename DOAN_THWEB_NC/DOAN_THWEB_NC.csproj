@@ -173,14 +173,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Contents\all.min.css" />
-    <Content Include="Contents\easy-responsive-tabs.css" />
-    <Content Include="Contents\global.css" />
-    <Content Include="Contents\slider.css" />
-    <Content Include="Contents\style.css" />
-    <Content Include="Contents\style2\style.css" />
-    <Content Include="Contents\style2\style.min.css" />
-    <Content Include="Contents\styles1.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -200,19 +192,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\blog_2.jpg" />
-    <Content Include="Images\cart.png" />
-    <Content Include="Images\Chiều tà_ %2824%29.jpg" />
-    <Content Include="Images\dribbble.png" />
-    <Content Include="Images\facebook.png" />
-    <Content Include="Images\linkedin.png" />
-    <Content Include="Images\list-img.png" />
-    <Content Include="Images\search.png" />
-    <Content Include="Images\skype.png" />
-    <Content Include="Images\slide-1-image.png" />
-    <Content Include="Images\slide-2-image.jpg" />
-    <Content Include="Images\slide-3-image.jpg" />
-    <Content Include="Images\twitter.png" />
+    <Content Include="Public\css\style.css" />
+    <Content Include="Public\img\logo.png" />
     <Content Include="js\all.min.js" />
     <Content Include="js\easing.js" />
     <Content Include="js\easyResponsiveTabs.js" />
@@ -290,7 +271,6 @@
     <Content Include="Models\DB_Entities.edmx.diagram">
       <DependentUpon>DB_Entities.edmx</DependentUpon>
     </Content>
-    <Content Include="Contents\Amble-Regular-webfont.ttf" />
     <Content Include="lib\owlcarousel\LICENSE" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
