@@ -196,6 +196,10 @@
     <Content Include="Public\img\authImg\login.jpg" />
     <Content Include="Public\img\carousel\s22.png" />
     <Content Include="Public\img\carousel\Zenbook_Oled.png" />
+    <Content Include="Public\img\Product\Apple\1.jpg" />
+    <Content Include="Public\img\Product\Apple\2.jpg" />
+    <Content Include="Public\img\Product\Apple\3.jpg" />
+    <Content Include="Public\img\Product\Apple\4.jpg" />
     <Content Include="Public\img\logo.png" />
     <Content Include="js\all.min.js" />
     <Content Include="js\easing.js" />
@@ -227,6 +231,13 @@
       <DependentUpon>DB_Entities.edmx</DependentUpon>
       <LastGenOutput>DB_Entities.cs</LastGenOutput>
     </Content>
+    <Content Include="Public\img\Product\Oppo\OPPO-Reno7-4G-Thumb-cam-.jpg" />
+    <Content Include="Public\img\Product\Samsung\Galaxy-S22-Ultra-Black-200x200.jpg" />
+    <Content Include="Public\img\Product\Samsung\Galaxy-S22-Ultra-Burgundy-200x200.jpg" />
+    <Content Include="Public\img\Product\Samsung\samsung-galaxy-a03-xanh-thumb-200x200.jpg" />
+    <Content Include="Public\img\Product\Samsung\samsung-galaxy-a52s-5g-mint-200x200.jpg" />
+    <Content Include="Public\img\Product\Samsung\samsung-galaxy-z-fold-3-black-1-200x200.jpg" />
+    <Content Include="Public\img\Product\Xiaomi\xiaomi-redmi-note-11s-xam.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />

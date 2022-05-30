@@ -5,7 +5,8 @@
 }
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
+
+    <link href="~/Public/css/style.css" rel="stylesheet" />
     <style>
     </style>
 </head>
@@ -112,15 +113,15 @@
     </div>
 
     <div class="main">
-        <div class="content">
-            <div class="content_top">
+        <div class="content ">
+            <div class="content_top d-flex">
                 <div class="heading">
-                    <h3>New Apple</h3>
+                    <h3>Điện thoại nổi bật</h3>
                 </div>
-                <div class="see">
-                    <p><a href="/AllProduct/Index">See all Products</a></p>
+                <div class="see ms-auto">
+                    <p class="m-0"><a href="/AllProduct/Index">Xem tất cả sản phẩm</a></p>
+                  
                 </div>
-                <div class="clear"></div>
             </div>
             <div class="row">
                 @foreach (var item in Model.Where(n => n.IDCategory == 1).Take(8))
@@ -134,7 +135,7 @@
                                     <p>@Html.DisplayFor(model => item.UnitPrice) VND</p>
                                 </div>
                                 <div class="add-cart">
-                                    <h4><a href="/ShoppingCart/AddCart/@item.IDProduct" class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add to Cart</a></h4>
+                                    <h4><a href="/ShoppingCart/AddCart/@item.IDProduct" class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i>Thêm vào giỏ hàng</a></h4>
                                 </div>
                                 <div class="clear"></div>
                             </div>
@@ -144,11 +145,10 @@
             </div>
         </div>
         <div class="content">
-            <div class="content_top">
+            <div class="content_top d-flex">
                 <div class="heading">
-                    <h3>New Android</h3>
+                    <h3>Điện thoại iPhone</h3>
                 </div>
-                <div class="clear"></div>
             </div>
             <div class="row">
                 @foreach (var item in Model.Where(n => n.IDCategory == 2).Take(8))
@@ -174,9 +174,8 @@
         <div class="content">
             <div class="content_top">
                 <div class="heading">
-                    <h3>New phụ kiện</h3>
+                    <h3>Điện thoại Xiaomi</h3>
                 </div>
-                <div class="clear"></div>
             </div>
             <div class="row">
                 @foreach (var item in Model.Where(n => n.IDCategory == 3).Take(8))
@@ -202,9 +201,8 @@
         <div class="content">
             <div class="content_top">
                 <div class="heading">
-                    <h3>New phụ kiện 2</h3>
+                    <h3>Điện thoại Vivo</h3>
                 </div>
-                <div class="clear"></div>
             </div>
             <div class="row">
                 @foreach (var item in Model.Where(n => n.IDCategory == 4).Take(8))
