@@ -193,6 +193,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Public\css\style.css" />
+    <Content Include="Public\img\authImg\login.jpg" />
     <Content Include="Public\img\logo.png" />
     <Content Include="js\all.min.js" />
     <Content Include="js\easing.js" />
@@ -325,7 +326,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Homecatepro\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
