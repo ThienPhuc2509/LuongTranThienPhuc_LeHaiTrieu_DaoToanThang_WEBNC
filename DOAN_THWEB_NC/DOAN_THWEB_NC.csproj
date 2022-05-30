@@ -194,6 +194,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Public\css\style.css" />
     <Content Include="Public\img\authImg\login.jpg" />
+    <Content Include="Public\img\carousel\s22.png" />
+    <Content Include="Public\img\carousel\Zenbook_Oled.png" />
     <Content Include="Public\img\logo.png" />
     <Content Include="js\all.min.js" />
     <Content Include="js\easing.js" />
@@ -212,18 +214,6 @@
     <Content Include="js\script.js" />
     <Content Include="js\slides.min.jquery.js" />
     <Content Include="js\startstop-slider.js" />
-    <Content Include="lib\easing\easing.js" />
-    <Content Include="lib\easing\easing.min.js" />
-    <Content Include="lib\owlcarousel\assets\ajax-loader.gif" />
-    <Content Include="lib\owlcarousel\assets\owl.carousel.css" />
-    <Content Include="lib\owlcarousel\assets\owl.carousel.min.css" />
-    <Content Include="lib\owlcarousel\assets\owl.theme.default.css" />
-    <Content Include="lib\owlcarousel\assets\owl.theme.default.min.css" />
-    <Content Include="lib\owlcarousel\assets\owl.theme.green.css" />
-    <Content Include="lib\owlcarousel\assets\owl.theme.green.min.css" />
-    <Content Include="lib\owlcarousel\assets\owl.video.play.png" />
-    <Content Include="lib\owlcarousel\owl.carousel.js" />
-    <Content Include="lib\owlcarousel\owl.carousel.min.js" />
     <Content Include="mail\contact.js" />
     <Content Include="mail\contact.php" />
     <Content Include="mail\jqBootstrapValidation.min.js" />
@@ -272,7 +262,6 @@
     <Content Include="Models\DB_Entities.edmx.diagram">
       <DependentUpon>DB_Entities.edmx</DependentUpon>
     </Content>
-    <Content Include="lib\owlcarousel\LICENSE" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -326,6 +315,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="lib\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

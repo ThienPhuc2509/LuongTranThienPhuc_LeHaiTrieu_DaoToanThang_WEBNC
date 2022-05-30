@@ -3,31 +3,26 @@
 <html>
 <head>
 
-    <script src="~/js/easing.js"></script>
-    <script src="~/js/easyResponsiveTabs.js"></script>
-    <script src="~/js/jquery-1.7.2.min.js"></script>
-    <script src="~/js/jquery.accordion.js"></script>
-    <script src="~/js/jquery.easing.js"></script>
-    <script src="~/js/move-top.js"></script>
-    <script src="~/js/script.js"></script>
-    <script src="~/js/slides.min.jquery.js"></script>
-    <script src="~/js/startstop-slider.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
     <link href="~/Public/css/style.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="~/js/all.min.js"></script>
 </head>
 <body>
     @* Header *@
-    <section class="header bg-dark" >
-        
+    <section class="header bg-dark">
+
         <div class="container">
             <div class="row">
                 <div class="col-3">
                     <div class="logo_header">
                         <img src="~/Public/img/logo.png" style="width:250px; height:150px;" />
-                       
+
                     </div>
 
                 </div>
@@ -50,17 +45,17 @@
                             @Html.Action("BagCart", "ShoppingCart")
                             <p class="m-0 text-white">Giỏ hàng</p>
                         </div>
-                       
+
 
                     </div>
-                    
+
                 </div>
 
             </div>
         </div>
-        
+
     </section>
-    
+
     <section class="main_menu">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -84,18 +79,18 @@
 
                     </ul>
                     <ul class="navbar-nav me-5 mb-2 mb-lg-0 d-flex">
-                       
+
                         <li class="nav-item">
-                          
+
                         </li>
                         @if (Session["IDUser"] == null)
                         {
-                            <li class="nav-item me-4"><a class="nav-link"  href="/Home/Sginup"> Đăng kí</a></li>
-                            <li class="nav-item"><a class="nav-link"  href="/Home/Login"> Đăng nhập</a></li>
+                            <li class="nav-item me-4"><a class="nav-link" href="/Home/Sginup"> Đăng kí</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/Home/Login"> Đăng nhập</a></li>
                         }
                         else
                         {
-                            <li class="nav-item"><a class="nav-link"  href="#">@Session["Email"].ToString()</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">@Session["Email"].ToString()</a></li>
                             <li class="nav-item"><a class="nav-link" href="@Url.Action("Logout","Home")">Đăng xuất</a></li>
                         }
 
@@ -107,139 +102,134 @@
     </section>
 
     <section class="main_container">
-       
-            @RenderBody()
+
+        @RenderBody()
 
     </section>
 
     <section class="footer mt-5">
 
-            <!-- Footer -->
-            <footer class="text-center text-lg-start text-white"
-                    style="background-color: #1c2331">
-                <!-- Section: Social media -->
-                <section class="d-flex justify-content-between p-4 bg-warning">
-                    <!-- Left -->
-                    <div class="me-5">
-                        <span>Kết nối cùng chúng tôi trên các nền tảng mạng xã hội: </span>
-                    </div>
-                    <!-- Left -->
-                    <!-- Right -->
-                    <div>
-                        <a href="" class="text-white me-4">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="" class="text-white me-4">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="" class="text-white me-4">
-                            <i class="fab fa-google"></i>
-                        </a>
-                        <a href="" class="text-white me-4">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="" class="text-white me-4">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="" class="text-white me-4">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <!-- Right -->
-                </section>
-                <!-- Section: Social media -->
-                <!-- Section: Links  -->
-                <section class="">
-                    <div class="container text-center text-md-start mt-5">
-                        <!-- Grid row -->
-                        <div class="row mt-3">
-                            <!-- Grid column -->
-                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                                <!-- Content -->
-                                <h6 class="text-uppercase fw-bold">Nhóm 2</h6>
-                                <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                                    style="width: 60px; background-color: #7c4dff; height: 2px" />
-                                <ul>
-                                    <li>Lương Trần Thiên Phúc</li>
-                                    <li>Lê Hải Triều</li>
-                                    <li>Đào Toàn Thắng</li>
-                                </ul>
-                            </div>
-                            <!-- Grid column -->
-                            <!-- Grid column -->
-                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                                <!-- Links -->
-                                <h6 class="text-uppercase fw-bold">Sản phẩm</h6>
-                                <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                                    style="width: 60px; background-color: #7c4dff; height: 2px" />
-                                <p>
-                                    <a href="#!" class="text-white text-decoration-none">Điện thoại</a>
-                                </p>
-                                <p>
-                                    <a href="#!" class="text-white text-decoration-none">Laptop</a>
-                                </p>
-                                <p>
-                                    <a href="#!" class="text-white text-decoration-none">Tablet</a>
-                                </p>
-                                <p>
-                                    <a href="#!" class="text-white text-decoration-none">Phụ kiện</a>
-                                </p>
-                            </div>
-                            <!-- Grid column -->
-                            <!-- Grid column -->
-                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                                <!-- Links -->
-                                <h6 class="text-uppercase fw-bold">Hỗ trợ</h6>
-                                <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                                    style="width: 60px; background-color: #7c4dff; height: 2px" />
-                                <p>
-                                    <a href="#!" class="text-white text-decoration-none">Lịch sử mua hàng</a>
-                                </p>
-                                <p>
-                                    <a href="#!" class="text-white text-decoration-none">Tìm cửa hàng gần nhất</a>
-                                </p>
-                                <p>
-                                    <a href="#!" class="text-white text-decoration-none">Mua hàng từ xa</a>
-                                </p>
-                                <p>
-                                    <a href="#!" class="text-white text-decoration-none">Gứi góp ý - khiếu nại</a>
-                                </p>
-                            </div>
-                            <!-- Grid column -->
-                            <!-- Grid column -->
-                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                                <!-- Links -->
-                                <h6 class="text-uppercase fw-bold">Liên hệ</h6>
-                                <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                                    style="width: 60px; background-color: #7c4dff; height: 2px" />
-                                <p><i class="fas fa-home mr-3"></i> HUFLIT University</p>
-                                <p><i class="fas fa-envelope mr-3"></i> thienphuc.luongtran@gmail.com</p>
-                                <p><i class="fas fa-phone mr-3"></i> + 078 346 7852</p>
-                                <p><i class="fas fa-print mr-3"></i> + 058 257 5704</p>
-                            </div>
-                            <!-- Grid column -->
-                        </div>
-                        <!-- Grid row -->
-                    </div>
-                </section>
-                
-                <div class="text-center p-3"
-                     style="background-color: rgba(0, 0, 0, 0.2)">
-                    <p>&copy; Lương Trần Thiên Phúc - Lê Hải Triều - Đào Toàn Thắng</p>
+        <!-- Footer -->
+        <footer class="text-center text-lg-start text-white"
+                style="background-color: #1c2331">
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-between p-4 bg-warning">
+                <!-- Left -->
+                <div class="me-5">
+                    <span>Kết nối cùng chúng tôi trên các nền tảng mạng xã hội: </span>
                 </div>
+                <!-- Left -->
+                <!-- Right -->
+                <div>
+                    <a href="" class="text-white me-4">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="text-white me-4">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="text-white me-4">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="text-white me-4">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="" class="text-white me-4">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="" class="text-white me-4">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+            <!-- Section: Links  -->
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <h6 class="text-uppercase fw-bold">Nhóm 2</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <ul>
+                                <li>Lương Trần Thiên Phúc</li>
+                                <li>Lê Hải Triều</li>
+                                <li>Đào Toàn Thắng</li>
+                            </ul>
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold">Sản phẩm</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <p>
+                                <a href="#!" class="text-white text-decoration-none">Điện thoại</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white text-decoration-none">Laptop</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white text-decoration-none">Tablet</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white text-decoration-none">Phụ kiện</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold">Hỗ trợ</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <p>
+                                <a href="#!" class="text-white text-decoration-none">Lịch sử mua hàng</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white text-decoration-none">Tìm cửa hàng gần nhất</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white text-decoration-none">Mua hàng từ xa</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white text-decoration-none">Gứi góp ý - khiếu nại</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold">Liên hệ</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <p><i class="fas fa-home mr-3"></i> HUFLIT University</p>
+                            <p><i class="fas fa-envelope mr-3"></i> thienphuc.luongtran@gmail.com</p>
+                            <p><i class="fas fa-phone mr-3"></i> + 078 346 7852</p>
+                            <p><i class="fas fa-print mr-3"></i> + 058 257 5704</p>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
 
-            </footer>
-         
-      
+            <div class="text-center p-3"
+                 style="background-color: rgba(0, 0, 0, 0.2)">
+                <p>&copy; Lương Trần Thiên Phúc - Lê Hải Triều - Đào Toàn Thắng</p>
+            </div>
+
+        </footer>
+
+
 
     </section>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $().UItoTop({ easingType: 'easeOutQuart' });
 
-            });
-        </script>
-        <a href="#" id="toTop"><span id="toTopHover"> </span></a>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
