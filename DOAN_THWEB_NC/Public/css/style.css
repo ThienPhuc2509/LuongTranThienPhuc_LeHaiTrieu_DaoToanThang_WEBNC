@@ -10,3 +10,49 @@
     border-radius:10px;
 }
 
+.all-owl {
+    margin: 40px 100px 60px 100px;
+}
+
+.custom-nav {
+    position: absolute;
+    top: 745px;
+    left: 0;
+    right: 0;
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+    color: #FFF;
+    font-size: 14px;
+    margin: 5px;
+    padding: 4px 7px;
+    background: #D6D6D6;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.owl-prev, .owl-next {
+    position: absolute;
+    height: 100px;
+    border: none;
+    z-index: 100;
+}
+
+    .owl-prev i {
+        color: white;
+        font-size: 2.0em;
+    }
+
+    .owl-next i {
+        color: white;
+        font-size: 2.0em;
+    }
+
+.owl-prev {
+    left: 0;
+}
+
+.owl-next {
+    right: 0;
+}
