@@ -4,6 +4,7 @@
 .hovers:hover {
     transform: translateY(-5px);
     color:burlywood;
+    cursor:pointer;
 }
 .see{
     border-radius:10px;
