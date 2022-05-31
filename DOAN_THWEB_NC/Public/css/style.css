@@ -1,3 +1,11 @@
 ﻿.search{
     margin-top:10px;
 }
+.hovers:hover {
+    transform: translateY(-5px);
+    color:burlywood;
+}
+.see{
+    border-radius:10px;
+}
+
