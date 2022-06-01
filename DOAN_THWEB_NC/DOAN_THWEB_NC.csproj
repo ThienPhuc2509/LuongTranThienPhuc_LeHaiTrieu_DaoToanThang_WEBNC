@@ -146,16 +146,10 @@
     <Compile Include="Areas\Admin\Controllers\OrdersController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AllProductController.cs" />
-    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
-    <Compile Include="Controllers\ProductDetailController.cs" />
-    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -182,6 +176,9 @@
       <DependentUpon>DB_Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
+      <DependentUpon>DB_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>DB_Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
@@ -614,6 +611,7 @@
     <Content Include="Public\img\carousel\Huawei_watch_fit_2.png" />
     <Content Include="Public\img\carousel\s22.png" />
     <Content Include="Public\img\carousel\Zenbook_Oled.png" />
+    <Content Include="Public\img\Categories\samsungnew-220x48-1.png" />
     <Content Include="Public\img\Product\Apple\1.jpg" />
     <Content Include="Public\img\Product\Apple\2.jpg" />
     <Content Include="Public\img\Product\Apple\3.jpg" />
@@ -979,27 +977,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Sginup.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Test\Index.cshtml" />
-    <Content Include="Views\Categories\Create.cshtml" />
-    <Content Include="Views\Categories\Delete.cshtml" />
-    <Content Include="Views\Categories\Details.cshtml" />
-    <Content Include="Views\Categories\Edit.cshtml" />
-    <Content Include="Views\Categories\Index.cshtml" />
-    <Content Include="Views\Products\Create.cshtml" />
-    <Content Include="Views\Products\Delete.cshtml" />
-    <Content Include="Views\Products\Details.cshtml" />
-    <Content Include="Views\Products\Edit.cshtml" />
-    <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\ProductDetail\Index.cshtml" />
     <Content Include="Views\ShoppingCart\ShowCart.cshtml" />
     <Content Include="Views\ShoppingCart\BagCart.cshtml" />
     <Content Include="Views\ShoppingCart\Shopping_Success.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Users\Create.cshtml" />
-    <Content Include="Views\Users\Delete.cshtml" />
-    <Content Include="Views\Users\Details.cshtml" />
-    <Content Include="Views\Users\Edit.cshtml" />
-    <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Menu\Index.cshtml" />
     <Content Include="Views\Home\ProductCategory.cshtml" />
     <Content Include="Views\AllProduct\Index.cshtml" />

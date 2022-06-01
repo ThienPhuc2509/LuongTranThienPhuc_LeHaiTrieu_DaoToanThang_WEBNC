@@ -62,7 +62,7 @@
 
                     <li><a href="#" class="dropdown-item">@Session["Email"].ToString()</a></li>
                     <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="@Url.Action("Logout","Home")">Logout</a></li>
+                    <li><a class="dropdown-item" href="@Url.Action("Index","Home")">Đăng xuất</a></li>
                 </ul>
             </li>
         </ul>
@@ -149,7 +149,9 @@
                     {
                         <div class="col-sm-6 col-md-3" style="margin-top:20px; width:20%">
                             <div class="card">
-                                <a href="@Url.Action("Index", "ProductDetail", new {Id=item.IDProduct})"><img src="@Url.Content(item.Images)" alt="" style="min-height:235px;max-width:230px" /></a>
+                                <a href="@Url.Action("Index", "ProductDetail", new {Id=item.IDProduct})">
+                                <img src="@Url.Content(item.Images)" alt="" style="min-height:235px;max-width:230px" />
+                                </a>
                                 <p style="text-align:center">@Html.DisplayFor(model => item.NameProduct) </p>
                                 <div class="price-details">
                                     <div class="price-number">

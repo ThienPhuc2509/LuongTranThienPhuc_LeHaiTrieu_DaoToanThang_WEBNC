@@ -46,7 +46,7 @@ namespace DOAN_THWEB_NC.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDCategories,NameCategory")] Category category)
+        public ActionResult Create([Bind(Include = "IDCategories,NameCategory,ImagesCategory")] Category category)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace DOAN_THWEB_NC.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDCategories,NameCategory")] Category category)
+        public ActionResult Edit([Bind(Include = "IDCategories,NameCategory,ImagesCategory")] Category category)
         {
             if (ModelState.IsValid)
             {

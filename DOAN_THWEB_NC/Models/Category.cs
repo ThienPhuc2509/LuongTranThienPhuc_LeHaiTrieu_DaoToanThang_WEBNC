@@ -22,6 +22,7 @@ namespace DOAN_THWEB_NC.Models
     
         public int IDCategories { get; set; }
         public string NameCategory { get; set; }
+        public string ImagesCategory { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
