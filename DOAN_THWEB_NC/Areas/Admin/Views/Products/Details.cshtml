@@ -1,0 +1,75 @@
+﻿@model DOAN_THWEB_NC.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NameProduct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameProduct)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Images)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Images)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Available)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Available)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descriptions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descriptions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.NameCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.NameCategory)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDProduct }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

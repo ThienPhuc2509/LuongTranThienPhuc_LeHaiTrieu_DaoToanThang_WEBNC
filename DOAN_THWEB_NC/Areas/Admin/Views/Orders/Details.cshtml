@@ -1,0 +1,83 @@
+﻿@model DOAN_THWEB_NC.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NameUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Addresss)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Addresss)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitPriceSale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitPriceSale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameProduct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameProduct)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.NameProduct)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.NameProduct)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDOrder }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

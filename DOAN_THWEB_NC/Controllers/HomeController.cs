@@ -88,7 +88,7 @@ namespace DOAN_THWEB_NC.Controllers
                 {
                     Session["IDUser"] = _user.IDUser;
                     Session["Email"] = _user.Email;
-                    return RedirectToAction("Index", "Admin");
+                    return RedirectToAction("Dashboard", "Admin");
                 }
                 
                 }  

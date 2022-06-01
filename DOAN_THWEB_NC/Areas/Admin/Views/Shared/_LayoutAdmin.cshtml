@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("header", required: false)
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Public/dist/css/style.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="main-wrapper">
+       
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                      
+                    </a>
+                </div>
+               
+                <div class="navbar-collapse">
+                  
+                    <ul class="navbar-nav mr-auto">
+                        
+                        <li class="nav-item hidden-sm-up">
+                            <a class="nav-link nav-toggler waves-effect waves-light"
+                               href="javascript:void(0)"><i class="ti-menu"></i></a>
+                        </li>
+                       
+                  
+                        <li class="nav-item search-box">
+                            <a class="nav-link waves-effect waves-dark"
+                               href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav my-lg-0">
+                      
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="../assets/images/users/1.jpg" alt="user" class="img-circle" width="30">
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </nav>
+        </header>
+     
+        <aside class="left-sidebar">
+            <div class="d-flex no-block nav-text-box align-items-center">
+                <span>
+                    <img src="~/Public/img/logo.png" style="width:200px; height:120px;" />
+                </span>
+                <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)">
+                    <i class="ti-menu"></i>
+                </a>
+                <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)">
+                    <i class="ti-menu ti-close"></i>
+                </a>
+            </div>
+            <div class="scroll-sidebar">
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li>
+                            <a class="waves-effect waves-dark" href="index.html" aria-expanded="false">
+                                <i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="/Admin/Users" aria-expanded="false">
+                                <i class="fa fa-user"></i><span class="hide-menu">Tài khoản</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="/Admin/Products" aria-expanded="false">
+                                <i class="fa fa-table"></i><span class="hide-menu"></span>Sản phẩm
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="/Admin/Categories" aria-expanded="false">
+                                <i class="fa fa-smile"></i><span class="hide-menu"></span>Loại sản phẩm
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="/Admin/Orders" aria-expanded="false">
+                                <i class="fa fa-globe"></i><span class="hide-menu"></span>Đơn hàng
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="pages-blank.html" aria-expanded="false">
+                                <i class="fa fa-bookmark"></i><span class="hide-menu"></span>Blank
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false">
+                                <i class="fa fa-question-circle"></i><span class="hide-menu"></span>404
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+              
+            </div>
+          
+        </aside>
+     
+        <div class="page-wrapper">
+          
+            <div class="container-fluid">
+              
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">Blank Page</h4>
+                    </div>
+                    <div class="col-md-7 align-self-center text-right">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                                <li class="breadcrumb-item active">Blank Page</li>
+                            </ol>
+                        
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                @RenderBody()
+                                </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+         
+        </div>
+       
+        <footer class="footer">
+            <p>&copy; Lương Trần Thiên Phúc - Lê Hải Triều - Đào Toàn Thắng</p>
+        </footer>
+       
+    </div>
+
+
+    @RenderSection("footer", required: false)
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="~/Public/dist/assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/Public/dist/assets/node_modules/popper/popper.min.js"></script>
+    <script src="~/Public/dist/assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <!--Wave Effects -->
+    <script src="~/Public/dist/js/perfect-scrollbar.jquery.min.js"></script>
+
+    <script src="~/Public/dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="~/Public/dist/js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="~/Public/dist/assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="~/Public/dist/assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
+    <!--Custom JavaScript -->
+    <script src="~/Public/dist/js/custom.min.js"></script>
+</body>
+</html>
