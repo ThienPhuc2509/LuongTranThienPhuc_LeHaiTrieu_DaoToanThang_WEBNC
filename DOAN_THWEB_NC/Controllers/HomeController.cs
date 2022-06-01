@@ -71,7 +71,7 @@ namespace DOAN_THWEB_NC.Controllers
                   && s.Password.Equals(_user.Password)).FirstOrDefault(); 
                 if (obj == null)
                 {
-                ViewBag.error = "Email hoac mat khau khong dung!";
+                ViewBag.error = "Email hoặc mật khẩu không đúng";
                 return View("Login");
                 }
                 else

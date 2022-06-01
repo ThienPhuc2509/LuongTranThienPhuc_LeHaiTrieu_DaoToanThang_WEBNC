@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container-fluid py-5">
+@*<div class="container-fluid py-5">
     <div class="row px-xl-5">
         <div class="col-lg-5 pb-5">
             <div class="carousel-item active">
@@ -15,38 +15,43 @@
         <div class="col-lg-7 pb-5">
             <h3 class="font-weight-semi-bold">@Model.NameProduct</h3>
 
-            <h3 class="font-weight-semi-bold mb-4">@Model.UnitPrice VND</h3>
+            <h3 class="fw-bold text-danger" >@Model.UnitPrice VND</h3>
             <p class="mb-4">@Model.Descriptions.</p>
+                
 
-
-
-            <div class="d-flex pt-2">
-                <p class="text-dark font-weight-medium mb-0 mr-2">Share on:</p>
-                <div class="d-inline-flex">
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-pinterest"></i>
-                    </a>
-                </div>
-            </div>
             <div class="add-cart" style="justify-content:left">
                 <h4><a href="/ShoppingCart/AddCart/@Model.IDProduct">Add to Cart</a></h4>
             </div>
         </div>
     </div>
-    <hr />
-    <div class="row px-xl-5" style="text-align:center">
-        @Model.Descriptions
+    
+</div>*@
+<body class="bg-white">
+
+    <div class="container mt-3">
+        <p>
+            @Html.MvcSiteMap().SiteMapPath(new { @class = "text-decoration-none" })
+        </p>
+
+        <div class="row">
+            <div class="col-5 border border-danger">
+                <img src="@Url.Content(Model.Images)" alt="" style="width:450px; height:450px;" />
+            </div>
+            <div class="col-7 border border-dark">
+                <h3 class="font-weight-semi-bold">@Model.NameProduct</h3>
+
+                <h3 class="fw-bold text-danger">@Model.UnitPrice VND</h3>
+                <p class="mb-4">@Model.Descriptions.</p>
+
+
+                <div class="add-cart" style="justify-content:left">
+                    <h4><a class="text-decoration-none"href="/ShoppingCart/AddCart/@Model.IDProduct">Mua ngay</a></h4>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</body>
+
 @*<table>
         <tr>
             <td>
