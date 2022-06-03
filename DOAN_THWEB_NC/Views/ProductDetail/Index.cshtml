@@ -5,27 +5,27 @@
 }
 
 @*<div class="container-fluid py-5">
-    <div class="row px-xl-5">
-        <div class="col-lg-5 pb-5">
-            <div class="carousel-item active">
-                <img srcset="@Url.Content(Model.Images)" alt="iphone" style="min-height: 400px" />
+        <div class="row px-xl-5">
+            <div class="col-lg-5 pb-5">
+                <div class="carousel-item active">
+                    <img srcset="@Url.Content(Model.Images)" alt="iphone" style="min-height: 400px" />
+                </div>
+            </div>
+
+            <div class="col-lg-7 pb-5">
+                <h3 class="font-weight-semi-bold">@Model.NameProduct</h3>
+
+                <h3 class="fw-bold text-danger" >@Model.UnitPrice VND</h3>
+                <p class="mb-4">@Model.Descriptions.</p>
+
+
+                <div class="add-cart" style="justify-content:left">
+                    <h4><a href="/ShoppingCart/AddCart/@Model.IDProduct">Add to Cart</a></h4>
+                </div>
             </div>
         </div>
 
-        <div class="col-lg-7 pb-5">
-            <h3 class="font-weight-semi-bold">@Model.NameProduct</h3>
-
-            <h3 class="fw-bold text-danger" >@Model.UnitPrice VND</h3>
-            <p class="mb-4">@Model.Descriptions.</p>
-                
-
-            <div class="add-cart" style="justify-content:left">
-                <h4><a href="/ShoppingCart/AddCart/@Model.IDProduct">Add to Cart</a></h4>
-            </div>
-        </div>
-    </div>
-    
-</div>*@
+    </div>*@
 <body class="bg-white">
 
     <div class="container mt-3">
@@ -45,7 +45,7 @@
 
 
                 <div class="add-cart" style="justify-content:left">
-                    <h4><a class="text-decoration-none"href="/ShoppingCart/AddCart/@Model.IDProduct">Mua ngay</a></h4>
+                    <h4><a class="text-decoration-none" href="/ShoppingCart/AddCart/@Model.IDProduct">Mua ngay</a></h4>
                 </div>
             </div>
         </div>

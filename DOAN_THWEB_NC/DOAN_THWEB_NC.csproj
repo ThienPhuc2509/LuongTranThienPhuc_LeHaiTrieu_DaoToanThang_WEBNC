@@ -149,6 +149,7 @@
     <Compile Include="Controllers\AllProductController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -611,6 +612,9 @@
     <Content Include="Public\img\carousel\Huawei_watch_fit_2.png" />
     <Content Include="Public\img\carousel\s22.png" />
     <Content Include="Public\img\carousel\Zenbook_Oled.png" />
+    <Content Include="Public\img\Categories\logo-iphone-220x48.png" />
+    <Content Include="Public\img\Categories\logo-xiaomi-220x48-5.png" />
+    <Content Include="Public\img\Categories\OPPO42-b_5.jpg" />
     <Content Include="Public\img\Categories\samsungnew-220x48-1.png" />
     <Content Include="Public\img\Product\Apple\1.jpg" />
     <Content Include="Public\img\Product\Apple\2.jpg" />

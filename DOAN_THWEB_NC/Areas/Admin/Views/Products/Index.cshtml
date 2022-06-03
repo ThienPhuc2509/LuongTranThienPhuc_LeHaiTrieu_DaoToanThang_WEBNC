@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Danh sách sản phẩm</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -13,25 +13,23 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.NameProduct)
+           Điện thoại
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UnitPrice)
+            Giá cả
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Images)
+           Hình ảnh
+        </th>
+        
+        <th>
+            Trạng thái
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ProductDate)
+            Mô tả
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Available)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descriptions)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category.NameCategory)
+            Hãng
         </th>
         <th></th>
     </tr>
@@ -45,11 +43,9 @@
             @Html.DisplayFor(modelItem => item.UnitPrice)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Images)
+            <img src="@Url.Content(item.Images)" style="width:120px;"/>
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductDate)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.Available)
         </td>

@@ -14,6 +14,9 @@
     <link href="~/Public/css/owl.carousel.css" rel="stylesheet" />
     <link href="~/Public/css/owl.carousel.min.css" rel="stylesheet" />
     <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body style="background-color:#F3F3F3">
     @* Header *@
@@ -43,9 +46,12 @@
                 <div class="col-3">
                     <div class="search py-5 d-flex justify-content-center">
                         <div class="cart">
-                            <i class="fa-solid fa-cart-shopping" style="color: white; width: 50px; height: 30px;"></i>
-                            @Html.Action("BagCart", "ShoppingCart")
-                            <p class="m-0 text-white">Giỏ hàng</p>
+                            <a href="@Url.Action("ShowCart","ShoppingCart")" class="text-decoration-none">
+                                <i class="fa-solid fa-basket-shopping" style="color:white; width:30px; height:30px;"></i>
+                                @Html.Action("BagCart", "ShoppingCart")
+                                <p class="m-0 text-white">Giỏ hàng</p>
+                            </a>
+                          
                         </div>
 
 
@@ -59,7 +65,7 @@
     </section>
 
     <section class="main_menu">
-        <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #FFC08D ">
+        <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #C89063 ">
             <div class="container-fluid">
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -68,7 +74,7 @@
                             <a class="nav-link active" aria-current="page" href="/Home/Index">Trang chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sản phẩm</a>
+                            <a class="nav-link" href="@Url.Action("Index","AllProduct")">Sản phẩm</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
