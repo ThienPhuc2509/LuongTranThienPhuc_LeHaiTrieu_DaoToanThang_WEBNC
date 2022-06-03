@@ -24,3 +24,14 @@
     left:-12px;
     height:5px;
 }
+.w-49{
+    width:49% !important;
+}
+.fontUser{
+    position:relative;
+}
+    .fontUser i {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+    }

@@ -36,49 +36,42 @@
                     <div class="total">
                         Giá tiền: @total
                     </div>
-                    <a href="/ShoppingCart/RemoveCart/@item._shopping_product.IDProduct">Xóa khỏi giỏ hàng</a>
+                    <a class="text-danger text-decoration-none" href="/ShoppingCart/RemoveCart/@item._shopping_product.IDProduct">Xóa khỏi giỏ hàng</a>
 
                 </div>
             </div>
 
 
         }
-        <div class="cus_detail mt-3">
-            <p>THÔNG TIN KHÁCH HÀNG</p>
+<div class="container w-75 ">
+    <div class="cus_detail mt-3">
+        <p class="text-center fw-bold">THÔNG TIN KHÁCH HÀNG</p>
 
-            <div class="user_info">
-                @using (Html.BeginForm("Checkout", "ShoppingCart"))
-                {
-                    <table style="border-collapse:separate;border-spacing:5px;">
-                        <tr>
-                            <td>Họ tên: </td>
-                            <td><input type="text" name="Name_User" required /></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Địa chỉ: </td>
-                            <td><input type="text" name="Address_delivery" required /></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Số điện thoại </td>
-                            <td><input type="text" name="SDT_Cus" required /></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                            </td>
-                        </tr>
-                    </table>
-                    <p>Tổng tiền:@Model.Total_Money()</p>
+        <div class="user_info">
+            @using (Html.BeginForm("Checkout", "ShoppingCart"))
+            {
 
-                    <input type="submit" value="Thanh toán" class="btn btn-success" />
+                
+                <input type="text" name="Name_User" placeholder="Họ tên" class="w-100 p-2" required />
 
-                }
-            </div>
-            <a href="@Url.Action("Index","Home")">Mua thêm sản phẩm khác</a>
+                <div class="mt-3">
+                    <input type="text" name="Address_delivery" required class="w-50 p-2" placeholder="Địa chỉ" />
+                    <input type="text" name="SDT_Cus" required class="w-49 p-2" placeholder="Số điện thoại" />
+                </div>
+
+                <p class="mt-3">Tổng tiền:@Model.Total_Money()</p>
+
+                <div class=" d-flex justify-content-center py-4 ">
+                <button type="submit" style="background-color:#C89063" class="btn w-100 shadow-none">
+                    Thanh toán
+                </button>
+                </div>
+            }
         </div>
+        <a href="@Url.Action("Index","Home")">Mua thêm sản phẩm khác</a>
+    </div>
+</div>
+     
     }
 
 </div>
