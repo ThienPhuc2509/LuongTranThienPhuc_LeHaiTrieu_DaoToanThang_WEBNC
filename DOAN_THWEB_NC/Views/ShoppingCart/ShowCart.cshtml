@@ -13,11 +13,11 @@
         {
             double total = Convert.ToDouble(item._shopping_product.UnitPrice.Value * item._shoppping_quantity);
             <div class="row">
-                <div class="col-4 border border-dark">
+                <div class="col-4 border border-dark d-flex justify-content-center">
                     <img src="@Url.Content(item._shopping_product.Images)" style="width:150px;height:150px" />
                 </div>
 
-                <div class="col-8 border border-danger">
+                <div class="col-8 border border-dark py-2">
                     <div class="nameProduct">
                         @Html.DisplayFor(model => item._shopping_product.NameProduct, "", new { @class = "fw-bold" })
 
@@ -34,48 +34,51 @@
                     </div>
 
                     <div class="total">
-                        Total: @total
+                        Giá tiền: @total
                     </div>
                     <a href="/ShoppingCart/RemoveCart/@item._shopping_product.IDProduct">Xóa khỏi giỏ hàng</a>
 
                 </div>
             </div>
-        }
-<div class="cus_detail mt-3">
-    <p>THÔNG TIN KHÁCH HÀNG</p>
 
-    <div class="user_info">
-        @using (Html.BeginForm("Checkout", "ShoppingCart"))
-        {
-            <table style="border-collapse:separate;border-spacing:5px;">
-                <tr>
-                    <td>Name: </td>
-                    <td><input type="text" name="Name_User" required /></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Address: </td>
-                    <td><input type="text" name="Address_delivery" required /></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>SDT </td>
-                    <td><input type="text" name="SDT_Cus" required /></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                    </td>
-                </tr>
-            </table>
-            <input type="submit" value="Checkout" class="btn btn-success" />
 
         }
-        <p>Sum Total:@Model.Total_Money()</p>
-    </div>
-    <a href="@Url.Action("Index","Home")">Mua thêm sản phẩm khác</a>
-</div>
+        <div class="cus_detail mt-3">
+            <p>THÔNG TIN KHÁCH HÀNG</p>
+
+            <div class="user_info">
+                @using (Html.BeginForm("Checkout", "ShoppingCart"))
+                {
+                    <table style="border-collapse:separate;border-spacing:5px;">
+                        <tr>
+                            <td>Họ tên: </td>
+                            <td><input type="text" name="Name_User" required /></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Địa chỉ: </td>
+                            <td><input type="text" name="Address_delivery" required /></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Số điện thoại </td>
+                            <td><input type="text" name="SDT_Cus" required /></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                            </td>
+                        </tr>
+                    </table>
+                    <p>Tổng tiền:@Model.Total_Money()</p>
+
+                    <input type="submit" value="Thanh toán" class="btn btn-success" />
+
+                }
+            </div>
+            <a href="@Url.Action("Index","Home")">Mua thêm sản phẩm khác</a>
+        </div>
     }
 
 </div>
