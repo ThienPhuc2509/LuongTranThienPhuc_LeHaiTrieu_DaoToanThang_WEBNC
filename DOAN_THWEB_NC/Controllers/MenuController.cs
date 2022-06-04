@@ -19,7 +19,8 @@ namespace DOAN_THWEB_NC.Controllers
                 Hashtable tenloaisp = new Hashtable();
                 foreach (var item in Loaisp)
                 {
-                    tenloaisp.Add(item.IDCategories, item.NameCategory);
+                    tenloaisp.Add(item.IDCategories, item.ImagesCategory);    
+                    //tenloaisp.Add(item.IDCategories, item.ImagesCategory);
                 }
                 ViewBag.TenLoaiSP = tenloaisp;
                 return PartialView("Index");

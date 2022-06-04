@@ -9,21 +9,7 @@
 .see{
     border-radius:10px;
 }
-.wrapper .za.active{
-    height:auto;    
-}
 
-.wrapper{
-    margin-top:200px;
-}
-
-.wrapper .za:before{
-    content:"";
-    position:absolute;
-    top:8px;
-    left:-12px;
-    height:5px;
-}
 .w-49{
     width:49% !important;
 }
@@ -35,3 +21,11 @@
         left: 15px;
         top: 15px;
     }
+
+radius:hover {
+    border-color: black;
+    transform: translateY(-5px);
+}
+.read_more{
+    display:none;
+}

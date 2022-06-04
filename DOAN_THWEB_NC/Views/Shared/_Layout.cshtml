@@ -71,13 +71,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-5 me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/Home/Index">Trang chủ</a>
+                            <a class="nav-link text-white active" aria-current="page" href="/Home/Index">Trang chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Index","AllProduct")">Sản phẩm</a>
+                            <a class="nav-link text-white" href="@Url.Action("Index","AllProduct")">Sản phẩm</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Loại sản phẩm
                             </a>
                             <ul class="dropdown-menu">
@@ -87,13 +87,11 @@
                     </ul>
                     <ul class="navbar-nav me-5 mb-2 mb-lg-0 d-flex">
 
-                        <li class="nav-item">
-
-                        </li>
+                        
                         @if (Session["IDUser"] == null)
                         {
-                            <li class="nav-item me-4"><a class="nav-link" href="/Home/Sginup"> Đăng kí</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/Home/Login"> Đăng nhập</a></li>
+                            <li class="nav-item me-4 "><a class="nav-link text-white" href="/Home/Sginup"> Đăng kí</a></li>
+                            <li class="nav-item "><a class="nav-link text-white" href="/Home/Login"> Đăng nhập</a></li>
                         }
                         else
                         {

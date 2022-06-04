@@ -15,11 +15,8 @@
 </head>
 <div class="container mt-3" >
     <div class="row">
-        <div class="col-3">
-            <p class="text-center text-lg-start text-white"style="background-color: #C89063">Danh mục</p>
-            @{Html.RenderAction("Index", "Menu");}
-        </div>
-        <div class="col-9 ">
+      
+        <div class="col-12 ">
             
             <div id="carouselExampleIndicators" class="carousel slide border border-dark " data-bs-ride="carousel">
                 <ol class="carousel-indicators">
@@ -105,10 +102,10 @@
                 <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3  ">
                     <div class="owl-carousel owl-theme">
 
-                        @foreach (var item in Model.Where(n => n.IDCategory == 2).Take(8))
+                        @foreach (var item in Model.Where(n => n.IDCategory == 2)
                         {
                             <div class="item">
-                                <div class="col">
+                                <div class="col ">
                                     <div class="bg-white rounded-3  ">
                                         <div class="hovers">
                                             <a class="d-flex justify-content-center py-4 " href="@Url.Action("Index", "ProductDetail", new {Id=item.IDProduct})">

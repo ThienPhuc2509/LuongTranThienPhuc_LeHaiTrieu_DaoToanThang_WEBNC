@@ -1,7 +1,10 @@
 ﻿
-@foreach (var item in ViewBag.TenLoaiSP)
-{
-    <li>
-    <a href="@Url.Action("Index","AllProduct", new {IDCategories = item.Key})">@item.Value</a> 
-    </li>
-}
+    @foreach (var item in ViewBag.TenLoaiSP)
+    {
+
+        <a href="@Url.Action("Index","AllProduct", new {IDCategories = item.Key})"><img src="@Url.Content(item.Value)" class="hovers" style="width:180px; height:35px; border-radius:15px; background-color:white" /></a>
+
+    }
+
+
+  

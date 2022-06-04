@@ -614,7 +614,9 @@
     <Content Include="Public\img\carousel\Zenbook_Oled.png" />
     <Content Include="Public\img\Categories\logo-iphone-220x48.png" />
     <Content Include="Public\img\Categories\logo-xiaomi-220x48-5.png" />
+    <Content Include="Public\img\Categories\Nokia42-b_21.jpg" />
     <Content Include="Public\img\Categories\OPPO42-b_5.jpg" />
+    <Content Include="Public\img\Categories\Realme42-b_37.png" />
     <Content Include="Public\img\Categories\samsungnew-220x48-1.png" />
     <Content Include="Public\img\Product\Apple\1.jpg" />
     <Content Include="Public\img\Product\Apple\2.jpg" />
