@@ -36,7 +36,7 @@
                     <div class="total">
                         Giá tiền: @total
                     </div>
-                    <a class="text-danger text-decoration-none" href="/ShoppingCart/RemoveCart/@item._shopping_product.IDProduct">Xóa khỏi giỏ hàng</a>
+                    <a class="text-danger fw-bold text-decoration-none" href="/ShoppingCart/RemoveCart/@item._shopping_product.IDProduct">Xóa khỏi giỏ hàng</a>
 
                 </div>
             </div>
@@ -59,7 +59,7 @@
                     <input type="text" name="SDT_Cus" required class="w-49 p-2" placeholder="Số điện thoại" />
                 </div>
 
-                <p class="mt-3">Tổng tiền:@Model.Total_Money()</p>
+                <p class="mt-3 d-flex justify-content-end text-danger fw-bold ">Tổng tiền: @Model.Total_Money()</p>
 
                 <div class=" d-flex justify-content-center py-4 ">
                 <button type="submit" style="background-color:#C89063" class="btn w-100 shadow-none">
@@ -68,7 +68,7 @@
                 </div>
             }
         </div>
-        <a href="@Url.Action("Index","Home")">Mua thêm sản phẩm khác</a>
+        <a class="text-decoration-none text-black" href="@Url.Action("Index","Home")">Mua thêm sản phẩm khác</a>
     </div>
 </div>
      

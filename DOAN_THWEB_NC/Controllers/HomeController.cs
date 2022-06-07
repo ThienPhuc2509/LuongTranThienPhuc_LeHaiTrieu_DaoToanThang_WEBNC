@@ -30,12 +30,12 @@ namespace DOAN_THWEB_NC.Controllers
             //}
         }
         [HttpGet]
-        public ActionResult Sginup()
+        public ActionResult SignUp()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Sginup(User _user)
+        public ActionResult SignUp(User _user)
         {
             if (ModelState.IsValid)
             {

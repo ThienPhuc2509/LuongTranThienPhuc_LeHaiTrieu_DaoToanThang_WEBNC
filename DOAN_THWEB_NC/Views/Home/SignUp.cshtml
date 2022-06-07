@@ -1,79 +1,11 @@
 ﻿@model DOAN_THWEB_NC.Models.User
 @{
-    ViewBag.Title = "Sginup";
+    ViewBag.Title = "SignUp";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
 <body class="bg-dark">
-    @*<div class="container">
-            <div class="row">
-                <div class="col-lg-4></div>
-                <div class="col-lg-4>
-                    @using (Html.BeginForm("Sginup", "Home", FormMethod.Post))
-                    {
-                        @Html.AntiForgeryToken();
-                        <h2 style="text-align:center">SginUp/Register</h2>
-                        <hr />
-                        <div class="row">
-                            <div class="col-lg-6">
-                                @Html.LabelFor(m => m.FirstName)
-                            </div>
-                            <div class="col-lg-6">
-                                @Html.TextBoxFor(m => m.FirstName)
-                                @Html.ValidationMessageFor(m => m.FirstName)
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="row">
-                            <div class="col-lg-6">
-                                @Html.LabelFor(m => m.LastName)
-                            </div>
-                            <div class="col-lg-6">
-                                @Html.TextBoxFor(m => m.LastName)
-                                @Html.ValidationMessageFor(m => m.LastName)
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="row">
-                            <div class="col-lg-6">
-                                @Html.LabelFor(m => m.Email)
-                            </div>
-                            <div class="col-lg-6">
-                                @Html.TextBoxFor(m => m.Email)
-                                @Html.ValidationMessageFor(m => m.Email)
-                                @if (ViewBag.error != null)
-                                {
-                                    @ViewBag.error
-                                }
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="row">
-                            <div class="col-lg-6">
-                                @Html.LabelFor(m => m.Password)
-                            </div>
-                            <div class="col-lg-6">
-                                @Html.PasswordFor(m => m.Password)
-                                @Html.ValidationMessageFor(m => m.Password)
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="row">
-                            <div class="col-lg-6">
-                                @Html.LabelFor(m => m.ConfirmPassword)
-                            </div>
-                            <div class="col-lg-6">
-                                @Html.PasswordFor(m => m.ConfirmPassword)
-                                @Html.ValidationMessageFor(m => m.ConfirmPassword)
-                            </div>
-                        </div>
-                        <hr />
-                        <input type="submit" value="Sginup" style="display:block;margin-left:auto;margin-right:auto"/>
-                    }
-                </div>
-            </div>
-        </div>*@
 
     <section class="vh-100 bg-dark">
         <div class="container mt-5">
@@ -87,7 +19,7 @@
                                      alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:720px;" />
                             </div>
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                                @using (Html.BeginForm("Sginup", "Home", FormMethod.Post))
+                                @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
                                 {
                                     <div class="card-body text-black">
 
@@ -130,6 +62,7 @@
                                             @Html.LabelFor(m => m.ConfirmPassword)
                                             @Html.PasswordFor(m => m.ConfirmPassword)
                                             @Html.ValidationMessageFor(m => m.ConfirmPassword)
+
                                         </div> 
                                             <div class="pt-1 mb-4">
                                                 <input class="btn btn-dark btn-lg btn-block" type="submit" value="Login" />

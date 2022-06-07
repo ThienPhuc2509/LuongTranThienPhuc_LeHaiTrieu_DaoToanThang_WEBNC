@@ -23,7 +23,8 @@
     }
 
 radius:hover {
-    border-color: black;
+    border-radius:20px;
+
     transform: translateY(-5px);
 }
 .read_more{
