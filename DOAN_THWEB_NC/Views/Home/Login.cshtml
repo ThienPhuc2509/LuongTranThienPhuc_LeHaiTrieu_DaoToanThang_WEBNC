@@ -5,44 +5,7 @@
 }
 
 <body class="bg-dark">
-    @*<div class="container my-5 w-75">
-        <div class="row bg-black ">
-
-                @using (Html.BeginForm("Login", "Home", FormMethod.Post))
-                {
-                    @Html.AntiForgeryToken();
-                    <h2 style="text-align:center">Login</h2>
-                    <hr />
-                    <div class="row">
-                        <div class="col-6">
-                            @Html.LabelFor(m => m.Email)
-                        </div>
-                        <div class="col-6">
-                            @Html.TextBoxFor(m => m.Email)
-                            @Html.ValidationMessageFor(m => m.Email)
-                            @if (ViewBag.error != null)
-                            {
-                                @ViewBag.error
-                            }
-                        </div>
-                    </div>
-                    <hr />
-                    <div class="row">
-                        <div class="col-6">
-                            @Html.LabelFor(m => m.Password)
-                        </div>
-                        <div class="col-6">
-                            @Html.PasswordFor(m => m.Password)
-                            @Html.ValidationMessageFor(m => m.Password)
-                        </div>
-                    </div>
-                    <hr />
-                    <input type="submit" value="Login" />
-
-                }
-            </div>
-
-            </div>*@
+  
     <section class="vh-100 bg-dark">
         <div class="container mt-5">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -72,23 +35,26 @@
 
 
                                                 @Html.TextBoxFor(m => m.Email, new { @class = "form-control form-control-lg shadow-none" })
-                                                @Html.ValidationMessageFor(m => m.Email)
+                                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+                                            </div>
+
+                                            <div class="form-outline mb-3">
+
+                                                @Html.LabelFor(m => m.Password,"Mật khẩu")
+
+                                                @Html.PasswordFor(m => m.Password, new { @class = "form-control form-control-lg s shadow-none" })
+                                                @Html.ValidationMessageFor(m => m.Password,"", new { @class = "text-danger fw-bold" })
+                                            </div>
+                                            <div class="text-danger fw-bold">
                                                 @if (ViewBag.error != null)
                                                 {
                                                     @ViewBag.error
                                                 }
                                             </div>
-
-                                            <div class="form-outline mb-4">
-
-                                                @Html.LabelFor(m => m.Password)
-
-                                                @Html.PasswordFor(m => m.Password, new { @class = "form-control form-control-lg s shadow-none" })
-                                                @Html.ValidationMessageFor(m => m.Password)
-                                            </div>
-
-                                            <div class="pt-1 mb-4">
-                                                <input class="btn btn-dark btn-lg btn-block" type="submit" value="Login" />
+                                          
+                                            <div class="pt-1 mb-4 mt-3">
+                                                <input class="btn btn-dark btn-lg btn-block shadow-none" type="submit" value="Đăng nhập" />
                                             </div>
 
                                             <a class="small text-muted" href="#!">Quên mật khẩu?</a>

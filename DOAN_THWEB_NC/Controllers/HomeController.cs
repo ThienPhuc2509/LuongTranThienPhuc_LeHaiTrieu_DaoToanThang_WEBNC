@@ -67,8 +67,14 @@ namespace DOAN_THWEB_NC.Controllers
         
         public ActionResult Login(User _user)
         {
+            //var obj2 = _db.Users.Where(s => s.Password.Equals(_user.Password)).FirstOrDefault();
                 var obj = _db.Users.Where(s => s.Email.Equals(_user.Email)
                   && s.Password.Equals(_user.Password)).FirstOrDefault(); 
+            //    if (obj2 == null)
+            //{
+            //    ViewBag.error = "mật khẩu không đúng";
+            //    return View("Login");
+            //}
                 if (obj == null)
                 {
                 ViewBag.error = "Email hoặc mật khẩu không đúng";

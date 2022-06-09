@@ -18,7 +18,7 @@ namespace DOAN_THWEB_NC.Models
         public string NameUser { get; set; }
         public string Addresss { get; set; }
         public Nullable<int> SDT { get; set; }
-        public Nullable<decimal> UnitPriceSale { get; set; }
+        public Nullable<int> UnitPriceSale { get; set; }
         public Nullable<System.DateTime> OrderDate { get; set; }
         public Nullable<int> Quantity { get; set; }
         public string NameProduct { get; set; }

@@ -22,7 +22,7 @@ namespace DOAN_THWEB_NC.Models
     
         public int IDProduct { get; set; }
         public string NameProduct { get; set; }
-        public Nullable<decimal> UnitPrice { get; set; }
+        public Nullable<int> UnitPrice { get; set; }
         public string Images { get; set; }
         public Nullable<System.DateTime> ProductDate { get; set; }
         public string Available { get; set; }

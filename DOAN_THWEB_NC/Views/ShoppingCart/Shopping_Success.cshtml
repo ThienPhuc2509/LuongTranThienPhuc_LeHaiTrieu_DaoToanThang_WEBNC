@@ -3,9 +3,15 @@
     ViewBag.Title = "Shopping_Success";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<body style="text-align:center">
-    <h2>thanh toan thanh cong</h2>
-    <a class="btn btn-success" href="@Url.Action("Index","Home")">Continue</a>
-</body>
+<div class="d-flex justify-content-center py-5">
+    <img src="~/Public/img/success-green-check-mark.png" style="width:200px; height:200px;" />
+
+</div>
+<h1 class="text-center">Thanh toán thành công   </h1>
+
+<p class="text-center m-0">
+    <a class="text-danger fw-bold fs-3 text-decoration-none"   href="@Url.Action("Index","Home")">Về trang chủ</a>
+</p>
+
 
 

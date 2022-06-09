@@ -37,12 +37,12 @@
                             </form>
                         </li>
                     </ul>
-                    <ul class="navbar-nav my-lg-0">
+                    @*<ul class="navbar-nav my-lg-0">
                       
-                        @*<li><a href="#" class="dropdown-item">@Session["Email"].ToString()</a></li>
+                        <li><a href="#" class="dropdown-item">@Session["Email"].ToString()</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="@Url.Action("Logout","Home")">Logout</a></li>*@
-                    </ul>
+                        <li><a class="dropdown-item" href="@Url.Action("Admin","Index")">Logout</a></li>
+                    </ul>*@
                 </div>
             </nav>
         </header>
@@ -62,11 +62,7 @@
             <div class="scroll-sidebar">
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li>
-                            <a class="waves-effect waves-dark" href="index.html" aria-expanded="false">
-                                <i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span>
-                            </a>
-                        </li>
+                       
                         <li>
                             <a class="waves-effect waves-dark" href="/Admin/Users" aria-expanded="false">
                                 <i class="fa fa-user"></i><span class="hide-menu">Tài khoản</span>
@@ -87,16 +83,8 @@
                                 <i class="fa fa-globe"></i><span class="hide-menu"></span>Đơn hàng
                             </a>
                         </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="pages-blank.html" aria-expanded="false">
-                                <i class="fa fa-bookmark"></i><span class="hide-menu"></span>Blank
-                            </a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false">
-                                <i class="fa fa-question-circle"></i><span class="hide-menu"></span>404
-                            </a>
-                        </li>
+                     
+                       
                         
                     </ul>
                 </nav>
@@ -109,20 +97,7 @@
           
             <div class="container-fluid">
               
-                <div class="row page-titles">
-                    <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">Blank Page</h4>
-                    </div>
-                    <div class="col-md-7 align-self-center text-right">
-                        <div class="d-flex justify-content-end align-items-center">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                                <li class="breadcrumb-item active">Blank Page</li>
-                            </ol>
-                        
-                        </div>
-                    </div>
-                </div>
+               
                 
                 <div class="row">
                     <div class="col-12">

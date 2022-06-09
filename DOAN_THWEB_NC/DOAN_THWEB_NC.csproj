@@ -667,6 +667,7 @@
     <Content Include="Public\img\Product\Xiaomi\Xiaomi-12-tim-thumb-mau-200x200.jpg" />
     <Content Include="Public\img\Product\Xiaomi\xiaomi-redmi-10c-xanh-luc-thumb-200x200.jpg" />
     <Content Include="Public\img\Product\Xiaomi\xiaomi-redmi-note-11s-xam.jpg" />
+    <Content Include="Public\img\success-green-check-mark.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
