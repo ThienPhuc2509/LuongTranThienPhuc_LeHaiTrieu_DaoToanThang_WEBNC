@@ -5,18 +5,19 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Thêm sản phẩm</h2>
 
 @using (Html.BeginForm("Create","Products",FormMethod.Post,new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Product</h4>
+        <h4>Sản phẩm</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.NameProduct, htmlAttributes: new { @class = "control-label col-md-2" })
+            <p class="control-label col-md-2 m-0">Tên sản phẩm</p>
+
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NameProduct, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NameProduct, "", new { @class = "text-danger" })
@@ -24,7 +25,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.UnitPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <p class="control-label col-md-2 m-0">Giá sản phẩm</p>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.UnitPrice, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.UnitPrice, "", new { @class = "text-danger" })
@@ -32,7 +33,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Images, htmlAttributes: new { @class = "control-label col-md-2" })
+            <p class="control-label col-md-2 m-0">Chọn hình sản phẩm</p>
+
             <div class="col-md-10">
                 @*@Html.EditorFor(model => model.Images, new { htmlAttributes = new { @class = "form-control" } })*@
                 <img src="@Url.Content(Model.Images)" style="width:120px;" id="previewImage" />
@@ -42,7 +44,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ProductDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <p class="control-label col-md-2 m-0">Ngày tạo sản phẩm</p>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ProductDate, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ProductDate, "", new { @class = "text-danger" })
@@ -50,7 +52,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Available, htmlAttributes: new { @class = "control-label col-md-2" })
+            <p class="control-label col-md-2 m-0">Tình trạng</p>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Available, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Available, "", new { @class = "text-danger" })
@@ -58,7 +60,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IDCategory, "IDCategory", htmlAttributes: new { @class = "control-label col-md-2" })
+            <p class="control-label col-md-2 m-0">Loại sản phẩm</p>
             <div class="col-md-10">
                 @Html.DropDownList("IDCategory", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IDCategory, "", new { @class = "text-danger" })
@@ -66,7 +68,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Descriptions, htmlAttributes: new { @class = "control-label col-md-2" })
+            <p class="control-label col-md-2 m-0">Mô tả</p>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Descriptions, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Descriptions, "", new { @class = "text-danger" })
@@ -75,12 +77,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Tạo" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Quay về", "Index")
 </div>

@@ -11,20 +11,27 @@ namespace DOAN_THWEB_NC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
+
     public partial class Category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Category()
         {
             this.Products = new HashSet<Product>();
+            ImagesCategory = "~/Public/img/Categories/Nokia42-b_21.jpg";
+      
         }
-    
+
         public int IDCategories { get; set; }
         public string NameCategory { get; set; }
         public string ImagesCategory { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase ImageCateUpload { get; set; }
     }
 }

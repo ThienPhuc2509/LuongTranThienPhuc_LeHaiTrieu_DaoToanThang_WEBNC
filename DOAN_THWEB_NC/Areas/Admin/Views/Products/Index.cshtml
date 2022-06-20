@@ -8,7 +8,7 @@
 <h2>Danh sách sản phẩm</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Tạo mới", "Create")
 </p>
 <table class="table">
     <tr>
@@ -16,7 +16,7 @@
            Điện thoại
         </th>
         <th>
-            Giá cả
+            Giá sản phẩm
         </th>
         <th>
            Hình ảnh
@@ -29,7 +29,7 @@
             Mô tả
         </th>
         <th>
-            Hãng
+            Hãng điện thoại
         </th>
         <th></th>
     </tr>
@@ -40,7 +40,7 @@
             @Html.DisplayFor(modelItem => item.NameProduct)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.UnitPrice)
+            <p class="m-0">@string.Format("{0:#,#}", item.UnitPrice).Replace(",", ",") VND</p>        
         </td>
         <td>
             <img src="@Url.Content(item.Images)" style="width:120px;"/>
@@ -56,9 +56,24 @@
             @Html.DisplayFor(modelItem => item.Category.NameCategory)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IDProduct }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IDProduct }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IDProduct })
+            <ul class="list-inline m-0">
+                <li class="list-inline-item">
+                <a href="@Url.Action("Edit", new {  id=item.IDProduct })">
+                    <button class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Chỉnh sửa"><i class="fa fa-edit"></i></button>
+
+                </a>
+
+                </li>
+                <li class="list-inline-item">
+                    <a href="@Url.Action("Details", new {  id=item.IDProduct })">
+                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Chi tiết"><i class="fa fa-table"></i></button>
+                </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="@Url.Action("Delete", new {  id=item.IDProduct })">
+                    <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Xóa"><i class="fa fa-trash"></i></button>
+                </li>
+            </ul>
         </td>
     </tr>
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -38,7 +39,8 @@ namespace DOAN_THWEB_NC.Areas.Admin.Controllers
         // GET: Admin/Categories/Create
         public ActionResult Create()
         {
-            return View();
+            Category category = new Category();
+            return View(category);
         }
 
         // POST: Admin/Categories/Create
@@ -46,13 +48,35 @@ namespace DOAN_THWEB_NC.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDCategories,NameCategory,ImagesCategory")] Category category)
+        public ActionResult Create(Category category)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Categories.Add(category);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    if (category.ImageCateUpload != null)
+                    {
+                        string filename = Path.GetFileNameWithoutExtension(category.ImageCateUpload.FileName);
+                        string extension = Path.GetExtension(category.ImageCateUpload.FileName);
+                        filename = filename + extension;
+                        category.ImagesCategory = "~/Public/img/Product/" + filename;
+                        category.ImageCateUpload.SaveAs(Path.Combine(Server.MapPath("~/Public/img/Product/"), filename));
+
+                    }
+                    db.Categories.Add(category);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+
+                }
+
+
+
+            }
+            catch
+            {
+
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+
             }
 
             return View(category);

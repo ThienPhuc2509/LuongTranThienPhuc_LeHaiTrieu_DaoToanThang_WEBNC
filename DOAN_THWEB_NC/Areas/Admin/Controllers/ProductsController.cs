@@ -109,10 +109,19 @@ namespace DOAN_THWEB_NC.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IDProduct,NameProduct,UnitPrice,Images,ProductDate,Available,IDCategory,Descriptions")] Product product)
+        public ActionResult Edit(Product product)
         {
             if (ModelState.IsValid)
             {
+                if (product.ImageUpload != null)
+                {
+                    string filename = Path.GetFileNameWithoutExtension(product.ImageUpload.FileName);
+                    string extension = Path.GetExtension(product.ImageUpload.FileName);
+                    filename = filename + extension;
+                    product.Images = "~/Public/img/Product/" + filename;
+                    product.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Public/img/Product/"), filename));
+
+                }
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

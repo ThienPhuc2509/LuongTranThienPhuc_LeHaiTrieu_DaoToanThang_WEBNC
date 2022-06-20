@@ -8,7 +8,7 @@
 <h2>Danh sách hãng điện thoại</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Tạo mới", "Create")
 </p>
 <table class="table">
     <tr>
@@ -30,9 +30,24 @@
                 <img src="@Url.Content(item.ImagesCategory)" />
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.IDCategories }) |
-                @Html.ActionLink("Details", "Details", new { id = item.IDCategories }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IDCategories })
+               <ul class="list-inline m-0">
+                <li class="list-inline-item">
+                <a href="@Url.Action("Edit", new {  id=item.IDCategories })">
+                    <button class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Chỉnh sửa"><i class="fa fa-edit"></i></button>
+
+                </a>
+
+                </li>
+                <li class="list-inline-item">
+                    <a href="@Url.Action("Details", new {  id=item.IDCategories })">
+                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Chi tiết"><i class="fa fa-table"></i></button>
+                </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="@Url.Action("Delete", new {  id=item.IDCategories })">
+                    <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Xóa"><i class="fa fa-trash"></i></button>
+                </li>
+            </ul>
             </td>
         </tr>
     }

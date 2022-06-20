@@ -4,28 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<div class="container-fluid py-5">
-        <div class="row px-xl-5">
-            <div class="col-lg-5 pb-5">
-                <div class="carousel-item active">
-                    <img srcset="@Url.Content(Model.Images)" alt="iphone" style="min-height: 400px" />
-                </div>
-            </div>
 
-            <div class="col-lg-7 pb-5">
-                <h3 class="font-weight-semi-bold">@Model.NameProduct</h3>
-
-                <h3 class="fw-bold text-danger" >@Model.UnitPrice VND</h3>
-                <p class="mb-4">@Model.Descriptions.</p>
-
-
-                <div class="add-cart" style="justify-content:left">
-                    <h4><a href="/ShoppingCart/AddCart/@Model.IDProduct">Add to Cart</a></h4>
-                </div>
-            </div>
-        </div>
-
-    </div>*@
 <body class="bg-white">
 
     <div class="container mt-3">
@@ -40,7 +19,7 @@
             <div class="col-7 border border-dark">
                 <h3 class="font-weight-semi-bold">@Model.NameProduct</h3>
 
-                <h3 class="fw-bold text-danger">@Model.UnitPrice VND</h3>
+                <h3 class="fw-bold text-danger">@string.Format("{0:#,#}", @Model.UnitPrice).Replace(",", ",") VND</h3>
                 <p class="mb-4">@Model.Descriptions.</p>
 
 
@@ -52,31 +31,5 @@
     </div>
 </body>
 
-@*<table>
-        <tr>
-            <td>
-                @Model.NameProduct
-            </td>
-        </tr>
-        <tr>
-            <td><img width="100px" height="100px" srcset="@Url.Content(Model.Images)" alt="iphone" /></td>
-        </tr>
-        <tr>
-            <td>
-                @Model.UnitPrice
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Model.Descriptions
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="/ShoppingCart/AddCart/@Model.IDProduct">
-                    <img src="@Url.Content("~/Images/cart.png")" style="width:30px;height:30px" />
-                </a>
-            </td>
-        </tr>
-    </table>*@
+
 

@@ -5,15 +5,15 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Delete</h2>
+<h2 class="text-danger">Xóa đơn hàng</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3 class="text-danger">Bạn có chắc chắn không ?</h3>
 <div>
-    <h4>Order</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.NameUser)
+            Tên khách hàng
         </dt>
 
         <dd>
@@ -21,7 +21,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Addresss)
+            Địa chỉ
         </dt>
 
         <dd>
@@ -29,7 +29,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SDT)
+            Số điện thoại
         </dt>
 
         <dd>
@@ -37,7 +37,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.UnitPriceSale)
+            Giá tiền
         </dt>
 
         <dd>
@@ -45,7 +45,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.OrderDate)
+            Ngày mua
         </dt>
 
         <dd>
@@ -53,7 +53,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Quantity)
+            Số lượng
         </dt>
 
         <dd>
@@ -61,20 +61,20 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NameProduct)
+            Tên sản phẩm
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.NameProduct)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.Product.NameProduct)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Product.NameProduct)
-        </dd>
+        </dd>*@
 
     </dl>
 
@@ -82,8 +82,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            @Html.ActionLink("Quay lại", "Index")
         </div>
     }
 </div>

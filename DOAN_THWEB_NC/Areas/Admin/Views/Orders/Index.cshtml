@@ -5,38 +5,38 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Danh sách đơn hàng</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Tạo mới", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.NameUser)
+            Tên khách hàng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Addresss)
+            Địa chỉ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SDT)
+            Số điện thoại
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UnitPriceSale)
+            Giá tiền
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OrderDate)
+            Ngày mua
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Quantity)
+            Số lượng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NameProduct)
+            Tên sản phẩm
         </th>
+       
         <th>
-            @Html.DisplayNameFor(model => model.Product.NameProduct)
+            Chức năng
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -51,7 +51,7 @@
             @Html.DisplayFor(modelItem => item.SDT)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.UnitPriceSale)
+             <p class="m-0">@string.Format("{0:#,#}", item.UnitPriceSale).Replace(",", ",") VND</p> 
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.OrderDate)
@@ -62,14 +62,28 @@
         <td>
             @Html.DisplayFor(modelItem => item.NameProduct)
         </td>
+      
         <td>
-            @Html.DisplayFor(modelItem => item.Product.NameProduct)
+            <ul class="list-inline m-0">
+                <li class="list-inline-item">
+                <a href="@Url.Action("Edit", new {  id=item.IDOrder })">
+                    <button class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Chỉnh sửa"><i class="fa fa-edit"></i></button>
+
+                </a>
+
+                </li>
+                <li class="list-inline-item">
+                    <a href="@Url.Action("Details", new {  id=item.IDOrder })">
+                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Chi tiết"><i class="fa fa-table"></i></button>
+                </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="@Url.Action("Delete", new {  id=item.IDOrder })">
+                    <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Xóa đơn hàng"><i class="fa fa-trash"></i></button>
+                </li>
+            </ul>
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IDOrder }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IDOrder }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IDOrder })
-        </td>
+
     </tr>
 }
 

@@ -5,14 +5,14 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Chi tiết sản phẩm</h2>
 
 <div>
-    <h4>Product</h4>
     <hr />
     <dl class="dl-horizontal">
+        
         <dt>
-            @Html.DisplayNameFor(model => model.NameProduct)
+            Tên sản phẩm
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.UnitPrice)
+            Giá sản phẩm
         </dt>
 
         <dd>
@@ -28,15 +28,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Images)
+            Hình ảnh sản phẩm
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Images)
+            <img src="@Url.Content(Model.Images)" style="width:120px;" id="previewImage" />
+
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ProductDate)
+            Ngày tạo
         </dt>
 
         <dd>
@@ -44,7 +45,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Available)
+           Tình trạng
         </dt>
 
         <dd>
@@ -52,7 +53,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Descriptions)
+            Mô tả
         </dt>
 
         <dd>
@@ -60,7 +61,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Category.NameCategory)
+            Hãng điện thoại
         </dt>
 
         <dd>
@@ -70,6 +71,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IDProduct }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.IDProduct }) |
+    @Html.ActionLink("Quay lại", "Index")
 </p>

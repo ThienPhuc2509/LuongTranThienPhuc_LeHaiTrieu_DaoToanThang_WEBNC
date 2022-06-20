@@ -5,14 +5,14 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Chi tiết hãng điện thoại</h2>
 
 <div>
-    <h4>Category</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.NameCategory)
+            Tên hãng điện thoại
         </dt>
 
         <dd>
@@ -20,16 +20,17 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ImagesCategory)
+            Logo
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ImagesCategory)
+            <img src="@Url.Content(Model.ImagesCategory)" />
+
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IDCategories }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.IDCategories }) |
+    @Html.ActionLink("Quay lại", "Index")
 </p>
