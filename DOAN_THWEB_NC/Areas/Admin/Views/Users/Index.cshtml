@@ -11,7 +11,7 @@
 <table class="table">
     <tr>
         <th>
-           Họ tên người
+           Họ người dùng
         </th>
         <th>
             Tên người dùng
@@ -40,9 +40,24 @@
             @Html.DisplayFor(modelItem => item.Password)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IDUser }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IDUser }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IDUser })
+            <ul class="list-inline m-0">
+                <li class="list-inline-item">
+                <a href="@Url.Action("Edit", new {  id=item.IDUser })">
+                    <button class="btn btn-primary btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Chỉnh sửa"><i class="fa fa-edit"></i></button>
+
+                </a>
+
+                </li>
+                <li class="list-inline-item">
+                    <a href="@Url.Action("Details", new {  id=item.IDUser })">
+                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Chi tiết"><i class="fa fa-table"></i></button>
+                </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="@Url.Action("Delete", new {  id=item.IDUser })">
+                    <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Xóa"><i class="fa fa-trash"></i></button>
+                </li>
+            </ul>
         </td>
     </tr>
 }

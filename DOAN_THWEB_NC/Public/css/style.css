@@ -1,4 +1,7 @@
-﻿.search{
+﻿*{
+    font-family:Arial;
+}
+.search{
     margin-top:10px;
 }
 .hovers:hover {
