@@ -7,7 +7,7 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit","Products",FormMethod.Post,new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
@@ -39,6 +39,9 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Images, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Images, "", new { @class = "text-danger" })
+                <img src="@Url.Content(Model.Images)" style="width:120px;" id="previewImage" />
+                <input type="file" name="ImageUpload" onchange="ShowImagePreview(this, document.getElementById('previewImage'))" />
+
             </div>
         </div>
 

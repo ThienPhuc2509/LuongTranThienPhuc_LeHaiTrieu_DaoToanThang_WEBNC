@@ -55,14 +55,12 @@
                                         </div>
                                         <div class="form-outline mb-4">
                                             @Html.LabelFor(m => m.Password, "Mật khẩu")
-                                            @Html.PasswordFor(m => m.Password, new { @class = "margins" })
+                                            @Html.PasswordFor(m => m.Password, new { @class = "marginc" })
                                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger fw-bold" })
                                         </div>
                                         
                                         <div class="form-outline mb-4">
-                                            @Html.LabelFor(m => m.ConfirmPassword, "Xác nhận mật khẩu")
-                                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "margins" })
-                                            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger fw-bold" })
+                                            
 
                                         </div> 
                                             <div class="pt-1 mb-4">

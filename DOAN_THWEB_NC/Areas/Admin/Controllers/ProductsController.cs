@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -39,8 +40,11 @@ namespace DOAN_THWEB_NC.Areas.Admin.Controllers
         // GET: Admin/Products/Create
         public ActionResult Create()
         {
+            Product product = new Product();
             ViewBag.IDCategory = new SelectList(db.Categories, "IDCategories", "NameCategory");
-            return View();
+
+            return View(product);
+
         }
 
         // POST: Admin/Products/Create
@@ -48,17 +52,40 @@ namespace DOAN_THWEB_NC.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IDProduct,NameProduct,UnitPrice,Images,ProductDate,Available,IDCategory,Descriptions")] Product product)
+        public ActionResult Create(Product product)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Products.Add(product);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                if (ModelState.IsValid)
+                {
+                    if (product.ImageUpload != null)
+                    {
+                        string filename = Path.GetFileNameWithoutExtension(product.ImageUpload.FileName);
+                        string extension = Path.GetExtension(product.ImageUpload.FileName);
+                        filename = filename + extension;
+                        product.Images = "~/Public/img/Product/" + filename;
+                        product.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Public/img/Product/"), filename));
 
+                    }
+                    db.Products.Add(product);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+
+                }
+
+             
+              
+            }
+            catch
+            {
+
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+
+            }
+          
             ViewBag.IDCategory = new SelectList(db.Categories, "IDCategories", "NameCategory", product.IDCategory);
             return View(product);
+
         }
 
         // GET: Admin/Products/Edit/5

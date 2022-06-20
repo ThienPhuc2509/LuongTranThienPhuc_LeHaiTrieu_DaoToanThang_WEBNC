@@ -13,5 +13,11 @@ namespace DOAN_THWEB_NC.Areas.Admin.Controllers
         {
             return View();
         }
+         public ActionResult Logout()
+        {
+            Session.Abandon();
+            return RedirectToAction("Index", new { controller = "Home", area = string.Empty });
+
+        }
     }
 }

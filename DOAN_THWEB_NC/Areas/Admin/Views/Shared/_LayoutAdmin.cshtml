@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="~/Public/dist/css/style.css" rel="stylesheet" />
     <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <script src="~/Scripts/UploadFileScript.js"></script>
 </head>
 <body>
     <div id="main-wrapper">
@@ -37,12 +38,11 @@
                             </form>
                         </li>
                     </ul>
-                    @*<ul class="navbar-nav my-lg-0">
+                    <ul class="navbar-nav my-lg-0">
                       
                         <li><a href="#" class="dropdown-item">@Session["Email"].ToString()</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="@Url.Action("Admin","Index")">Logout</a></li>
-                    </ul>*@
+                        <li><a class="dropdown-item" href="@Url.Action("Logout","Dashboard")">Đăng xuất</a></li>
+                    </ul>
                 </div>
             </nav>
         </header>

@@ -11,13 +11,16 @@ namespace DOAN_THWEB_NC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
             this.Orders = new HashSet<Order>();
+            Images = "~/Public/img/logo.png";
         }
     
         public int IDProduct { get; set; }
@@ -32,5 +35,8 @@ namespace DOAN_THWEB_NC.Models
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase ImageUpload { get; set;  }
     }
 }
