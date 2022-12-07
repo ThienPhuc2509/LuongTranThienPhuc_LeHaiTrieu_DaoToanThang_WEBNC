@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using DOAN_THWEB_NC.DesignPattern.ProxyPattern;
 using System.Web.Mvc;
 using DOAN_THWEB_NC.Models;
 
@@ -67,8 +68,8 @@ namespace DOAN_THWEB_NC.Areas.Admin.Controllers
                         product.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Public/img/Product/"), filename));
 
                     }
-                    db.Products.Add(product);
-                    db.SaveChanges();
+                    SanPham sanPham = new SanPhamProxyPattern(product);
+                    sanPham.AddSanPham();
                     return RedirectToAction("Index");
 
                 }
@@ -122,8 +123,8 @@ namespace DOAN_THWEB_NC.Areas.Admin.Controllers
                     product.ImageUpload.SaveAs(Path.Combine(Server.MapPath("~/Public/img/Product/"), filename));
 
                 }
-                db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
+                SanPham sanPham = new SanPhamProxyPattern(product);
+                sanPham.EditSanPham();
                 return RedirectToAction("Index");
             }
             ViewBag.IDCategory = new SelectList(db.Categories, "IDCategories", "NameCategory", product.IDCategory);
@@ -150,9 +151,11 @@ namespace DOAN_THWEB_NC.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Product product = db.Products.Find(id);
-            db.Products.Remove(product);
-            db.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                SanPham sanPham = new SanPhamProxyPattern(id);
+                sanPham.RemoveSanPham();
+            }
             return RedirectToAction("Index");
         }
 
