@@ -7,7 +7,9 @@
 
 <h2>Chi tiết đơn hàng</h2>
 
+double total = Convert.ToDouble(model.UnitPriceSale * model.Quantity);
 <div>
+   
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -65,7 +67,13 @@
         <dd>
             @Html.DisplayFor(model => model.NameProduct)
         </dd>
-
+        <dt>
+            Tổng tiền
+        </dt>
+        <dd>
+            
+            total
+        </dd>
         @*<dt>
             @Html.DisplayNameFor(model => model.Product.NameProduct)
         </dt>

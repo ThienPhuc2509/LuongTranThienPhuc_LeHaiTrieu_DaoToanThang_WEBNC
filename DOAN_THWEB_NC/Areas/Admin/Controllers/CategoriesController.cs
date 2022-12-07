@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using DOAN_THWEB_NC.DesignPattern;
 using System.Web.Mvc;
 using DOAN_THWEB_NC.Models;
 
@@ -63,8 +64,8 @@ namespace DOAN_THWEB_NC.Areas.Admin.Controllers
                         category.ImageCateUpload.SaveAs(Path.Combine(Server.MapPath("~/Public/img/Product/"), filename));
 
                     }
-                    db.Categories.Add(category);
-                    db.SaveChanges();
+                    CategorySingleton categorySingleton = CategorySingleton.GetInstance();
+                    categorySingleton.AddCategoryProducts(category);
                     return RedirectToAction("Index");
 
                 }
@@ -106,8 +107,8 @@ namespace DOAN_THWEB_NC.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(category).State = EntityState.Modified;
-                db.SaveChanges();
+                CategorySingleton categorySingleton = CategorySingleton.GetInstance();
+                categorySingleton.EditCateroryProducts(category);
                 return RedirectToAction("Index");
             }
             return View(category);
@@ -133,9 +134,8 @@ namespace DOAN_THWEB_NC.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Category category = db.Categories.Find(id);
-            db.Categories.Remove(category);
-            db.SaveChanges();
+            CategorySingleton categorySingleton = CategorySingleton.GetInstance();
+            categorySingleton.RemoveCategoryProducts(id);
             return RedirectToAction("Index");
         }
 
