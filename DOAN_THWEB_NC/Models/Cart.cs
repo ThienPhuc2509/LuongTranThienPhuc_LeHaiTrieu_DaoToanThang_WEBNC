@@ -10,8 +10,18 @@ namespace DOAN_THWEB_NC.Models
         public Product _shopping_product { get; set; }
         public int _shoppping_quantity { get; set; }
     }
+
     public class Cart
     {
+        public Boolean isCheckout { get; set; }
+        public void IsCheckOut()
+        {
+            isCheckout = true;
+        }
+        public void IsNotCheckOut()
+        {
+            isCheckout = false;
+        }
         List<CartItem> items = new List<CartItem>();
         public IEnumerable<CartItem> Items
         {

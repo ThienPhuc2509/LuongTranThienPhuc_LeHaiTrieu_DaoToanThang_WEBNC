@@ -1,4 +1,5 @@
-﻿using DOAN_THWEB_NC.Models;
+﻿using DOAN_THWEB_NC.DesignPattern.CommandPattern;
+using DOAN_THWEB_NC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,6 +66,8 @@ namespace DOAN_THWEB_NC.Controllers
         {
             return View();
         }
+        private readonly ICommand isCheckout;
+        private readonly ICommand isNotCheckout;
         public ActionResult Checkout(FormCollection form,User user)
         {
             if (Session["IDUser"] == null)
@@ -92,6 +95,7 @@ namespace DOAN_THWEB_NC.Controllers
                 
                 _db.SaveChanges();
                 cart.ClearCart();
+                isCheckout.Execute();
                 return RedirectToAction("Shopping_Success", "ShoppingCart");
             }   
         }
